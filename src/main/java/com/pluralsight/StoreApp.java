@@ -7,8 +7,8 @@ public class StoreApp {
         ArrayList<Product> inventory = getInventory();
 
         System.out.println("We carry the following inventory: ");
-        for (int i = 0; i < inventory.size(); i++){
-            Product p = inventory.get(i);
+
+        for (Product p : inventory) {
             System.out.printf("id: %d %s - Price: $%.2f%n",
                     p.getId(), p.getName(), p.getPrice());
         }
@@ -16,7 +16,12 @@ public class StoreApp {
 
     public static ArrayList<Product> getInventory(){
         ArrayList<Product> inventory = new ArrayList<Product>();
-        products.add(new Product());
+        inventory.add(new Product(1, "Wireless Mouse", 29.99));
+        inventory.add(new Product(2, "Mechanical Keyboard", 89.99));
+        inventory.add(new Product(3, "UltraWide Monitor", 349.99));
+        inventory.add(new Product(4, "USB-C Hub", 19.99));
+        inventory.add(new Product(5, "Ergonomic Office Chair", 199.99));
+
         return inventory;
     }
 }
